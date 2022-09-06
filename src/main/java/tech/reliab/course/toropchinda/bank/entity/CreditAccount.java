@@ -1,7 +1,12 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
+@Getter
+@Setter
  class CreditAccount {
     /**
      * Поле Id кредитного счета
@@ -14,15 +19,15 @@ import java.util.Date;
     /**
      * Поле Название банка, где взят кредит
      */
-    private Bank creditAccountBank;
+    private String creditAccountBankName;
     /**
      * Поле Дата начала кредита
      */
-    private Date creditBeginning;
+    private Date creditStartDate;
     /**
      * Поле Дата окончания кредита
      */
-    private Date creditEnding;
+    private Date creditEndDate;
     /**
      * Поле Кол-во месяцев, на которые взят кредит
      */
@@ -30,21 +35,35 @@ import java.util.Date;
     /**
      * Поле Сумма кредита
      */
-    private int creditAmount;
+    private float creditAmount;
     /**
      * Поле Ежемесячный платеж
      */
-    private int creditMonthlyPayment;
+    private float creditMonthlyPayment;
     /**
      * Поле Процентная ставка (должна быть равной процентной ставке банка, в котором взят кредит или ниже)
      */
-    private Bank creditBankRate;
+    private float creditBankRate;
     /**
      * Сотрудник, который выдал кредит
      */
-    private Employee employeeIssueCredit;
+    private Employee creditIssuer;
     /**
      * Поле Платежный счет в банке с которого будет осуществляться погашение данного кредита
      */
-    private int loanRepayment;
+    private String loanRepayment;
+
+   public CreditAccount(int creditAccountId, User creditAccountUser, String creditAccountBankName, Date creditStartDate, Date creditEndDate, short creditCountMonths, float creditAmount, float creditBankRate, Employee creditIssuer, String loanRepayment) {
+      this.creditAccountId = creditAccountId;
+      this.creditAccountUser = creditAccountUser;
+      this.creditAccountBankName = creditAccountBankName;
+      this.creditStartDate = creditStartDate;
+      this.creditEndDate = creditEndDate;
+      this.creditCountMonths = creditCountMonths;
+      this.creditAmount = creditAmount;
+      this.creditMonthlyPayment = creditAmount/creditCountMonths;
+      this.creditBankRate = creditBankRate;
+      this.creditIssuer = creditIssuer;
+      this.loanRepayment = loanRepayment;
+   }
 }

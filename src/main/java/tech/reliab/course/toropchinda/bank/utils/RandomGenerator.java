@@ -20,22 +20,28 @@ public class RandomGenerator {
      * @param max
      * @return
      */
-    public static float generateFloat(int min, int max) {
+    public static float generateFloat(float min, float max) {
         return new Random().nextFloat(max - min + 1) + min;
     }
 
     /**
-     * pri nreitinge 100 skidka 50%
-     * @param i
-     * @param i1
-     * @param rating
+     * Генерация процентной ставки на основе рейтинга банка
+     * @param rating Рейтинг от 1 до 100
      * @return
      */
-    public static float generateRateUseRating(int i, int i1, int rating) {
-        float random = generateFloat(0, 20);
+    public static float generateRateUseRating(int min, int max, int rating) {
+        float random = generateFloat(min, max);
         return (float) (random * (1 - rating*0.5));
     }
 
+    /**
+     * Генератор кредитного рейтинга без рандома на основе месячного дохода
+     * @param mountIncome месячный доход от 1 до 10000
+     * @return
+     */
+    public static int generateCreditRating(int mountIncome) {
+        return (int) Math.round(Math.ceil(mountIncome / 1000)) * 100;
+    }
 
 }
 

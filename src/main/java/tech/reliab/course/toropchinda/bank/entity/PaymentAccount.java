@@ -1,5 +1,10 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class PaymentAccount {
 
     /**
@@ -9,14 +14,20 @@ public class PaymentAccount {
     /**
      * Пользователь, за которым закреплен этот платежный счет
      */
-    private String userPaymentAccount;
+    private User paymentUser;
     /**
      * Поле Название банка, в котором открыт этот счет
      */
-    private Bank paymentAccountBank;
+    private String paymentAccountBankName;
     /**
      * Сумма, которая лежит в данный момент на счету (по умолчанию 0)
      */
     private int paymentAccountAmount;
 
+    public PaymentAccount(int paymentAccountId, User paymentUser, String paymentAccountBankName) {
+        this.paymentAccountId = paymentAccountId;
+        this.paymentUser = paymentUser;
+        this.paymentAccountBankName = paymentAccountBankName;
+        this.paymentAccountAmount = 0;
+    }
 }

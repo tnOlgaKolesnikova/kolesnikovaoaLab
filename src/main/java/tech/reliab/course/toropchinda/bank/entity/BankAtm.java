@@ -13,15 +13,15 @@ public class BankAtm {
     /**
      * Поле Имя банкомата
      */
-    private int bankName;
+    private int bankAtmName;
     /**
      * Поле Адрес (сопадает с адресом банковского офиса)
      */
-    private BankOffice bankAtmIdAddress;
+    private String bankAtmAddress;
     /**
      * Поле Статус (работает/не работает/нет денег)
      */
-    private String bankAtmIdStatus;
+    private BankAtmStatus bankAtmStatus;
     /**
      * Поле Банк, которому принадлежит банкомат
      */
@@ -37,19 +37,31 @@ public class BankAtm {
     /**
      * Поле Работает ли на выдачу денег? (да/нет)
      */
-    private boolean bankAtmPaymentOfTheMoney;
+    private boolean isGiveMoney;
     /**
      * Поле Можно ли внести деньги? (да/нет)
      */
-    private boolean bankAtmDepositMoney;
+    private boolean isTakeMoney;
     /**
      * Поле Кол-во денег в банкомате (напрямую зависит от поля «Всего денег в банке)
      */
-    private Bank bankAtmMoneyCapacity;
+    private int bankAtmMoneyCount;
     /**
      * Поле Стоимость обслуживания банкомата
      */
     private int bankAtmServiceCost;
 
-
+    public BankAtm(int bankAtmId, int bankAtmName, BankAtmStatus bankAtmStatus, Bank bankAtmAcquiring, BankOffice bankAtmLocation, Employee bankAtmEmployee, boolean isGiveMoney, boolean isTakeMoney, int bankAtmMoneyCount, int bankAtmServiceCost) {
+        this.bankAtmId = bankAtmId;
+        this.bankAtmName = bankAtmName;
+        this.bankAtmAddress = bankAtmLocation.getBankOfficeAddress();
+        this.bankAtmStatus = bankAtmStatus;
+        this.bankAtmAcquiring = bankAtmAcquiring;
+        this.bankAtmLocation = bankAtmLocation;
+        this.bankAtmEmployee = bankAtmEmployee;
+        this.isGiveMoney = isGiveMoney;
+        this.isTakeMoney = isTakeMoney;
+        this.bankAtmMoneyCount = bankAtmMoneyCount;
+        this.bankAtmServiceCost = bankAtmServiceCost;
+    }
 }

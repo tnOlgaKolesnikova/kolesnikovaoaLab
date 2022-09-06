@@ -1,7 +1,12 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
+@Getter
+@Setter
 public class Employee {
 
     /**
@@ -23,22 +28,28 @@ public class Employee {
     /**
      * Поле Работает ли в банковском офисе или удаленно? (да/нет)
      */
-    private boolean employeeTypeWork;
+    private boolean isWorkRemote;
     /**
      * Поле Банковский офис, в котором работает
      */
-    private Bank employeeBankOffice;
+    private BankOffice employeeBankOffice;
     /**
      * Поле Может ли выдавать кредиты? (да/нет)
      */
-    private boolean employeeStatus;
+    private boolean isCreditIssuer;
     /**
      * Поле Размер зарплаты
      */
     private int employeeSalary;
 
-
-
-
-
+    public Employee(int employeeId, String employeeName, Date employeeBirthdate, String employeePosition, boolean isWorkRemote, BankOffice employeeBankOffice, boolean isCreditIssuer, int employeeSalary) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.employeeBirthdate = employeeBirthdate;
+        this.employeePosition = employeePosition;
+        this.isWorkRemote = isWorkRemote;
+        this.employeeBankOffice = employeeBankOffice;
+        this.isCreditIssuer = isCreditIssuer;
+        this.employeeSalary = employeeSalary;
+    }
 }

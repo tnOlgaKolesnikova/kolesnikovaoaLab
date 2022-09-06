@@ -50,7 +50,7 @@ public class Bank {
     /**
      * Всего денег в банке (генерируется рандомно, но не более 1 000 000)
      */
-    private int bankMoneyCapacity;
+    private int bankMoneyCount;
 
     /**
      * Процентная ставка (генерируется рандомно, но не более 20%, однако
@@ -67,9 +67,9 @@ public class Bank {
         this.bankAtmCount = 0;
         this.bankEmployeeCount = 0;
         this.bankUserCount = 0;
-        this.bankRating = RandomGenerator.generateInt(0, 100);
-        this.bankMoneyCapacity = RandomGenerator.generateInt(1, 1000000);
-        this.bankRate = RandomGenerator.generateRateUseRating(0, 20, this.bankRating);
+        this.bankRating = RandomGenerator.generateInt(1, 100);
+        this.bankMoneyCount = RandomGenerator.generateInt(1, 1000000);
+        this.bankRate = RandomGenerator.generateRateUseRating(1, 20, this.bankRating);
     }
 
 
