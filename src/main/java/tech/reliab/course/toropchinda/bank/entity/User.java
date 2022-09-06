@@ -1,5 +1,7 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
+import java.util.Date;
+
 public class User {
     /*
   Id клиента
@@ -14,14 +16,44 @@ public class User {
 ежемесячного дохода, от меньше 1 000 – 100, от 1 000 до 2 000 – 200 и т.д.
 вплоть до 10 000
      */
-    public int userId;
-    public String userName;
-    public String userWorkplace;
-    public int userMonthlyRevenue;
-    public int userUsedBank;
-    public int userCreditAccount;
-    public int userPaymentAccount;
-    public float userBanksCreditRating;
+    /**
+     * Поле Id клиента
+     */
+    private int userId;
+    /**
+     * Поле ФИО
+     */
+    private String userName;
+    /**
+     * Поле Дата рождения
+     */
+    private Date userBirthdate;
+    /**
+     * Поле Место работы
+     */
+    private String userWorkplace;
+    /**
+     * Поле Ежемесячный доход (генерируется рандомно, но не более 10 000)
+     */
+    private int userMonthlyRevenue;
+    /**
+     * Поле Банки, которыми он пользуется
+     */
+    private Bank userUsedBank;
+    /**
+     * Поле Кредитные счета (по умолчанию пусто)
+     */
+    private int userCreditAccount;
+    /**
+     * Поле Платежные счета (по умолчанию пусто)
+     */
+    private int userPaymentAccount;
+    /**
+     * Кредитный рейтинг для банка (генерируется рандомно исходя из
+     * ежемесячного дохода, от меньше 1 000 – 100, от 1 000 до 2 000 – 200 и т.д.
+     * вплоть до 10 000
+     */
+    private byte userBanksCreditRating;
 
 
 }
