@@ -1,5 +1,8 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
+import javax.swing.plaf.PanelUI;
+import java.util.Date;
+
 public class CreditAccount {
 /*
 • Id кредитного счета
@@ -17,6 +20,15 @@ public class CreditAccount {
 данного кредита
  */
 
-
-
+public int creditAccountId;
+public String creditAccountUser;
+public String creditAccountBank;
+public Date creditBeginning;
+public Date creditEnding;
+public short creditCountMonths;
+public int creditAmount;
+public int creditMonthlyPayment;
+public float creditBankRate;
+public int employeeIssueCredit;
+public int loanRepayment;
 }

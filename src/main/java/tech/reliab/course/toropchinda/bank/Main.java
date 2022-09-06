@@ -8,8 +8,5 @@ public class Main {
         RandomGenerator.generate(0, 100);
 
 
-
-
-
     }
 }
