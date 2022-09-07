@@ -24,7 +24,10 @@ public class PaymentAccount {
      */
     private int paymentAccountAmount;
 
-    public PaymentAccount(int paymentAccountId, User paymentUser, String paymentAccountBankName) {
+    /**
+     *
+     */
+    public PaymentAccount() {
         this.paymentAccountId = paymentAccountId;
         this.paymentUser = paymentUser;
         this.paymentAccountBankName = paymentAccountBankName;

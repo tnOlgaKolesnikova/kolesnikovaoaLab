@@ -52,6 +52,9 @@ public class BankOffice {
      */
     private int bankOfficeRentCost;
 
+    /**
+     * Конструктор создание нового объекта офис банка
+     */
     public BankOffice(int bankOfficeId, String bankOfficeName, String bankOfficeAddress, BankOfficeStatus bankOfficeStatus, boolean isPossibleBankAtmPlaced, int bankOfficeCountBankAtm, boolean isPossibleCredit, boolean isPossibleCashGet, boolean isPossibleCashIn, int bankOfficeMoneyCount, int bankOfficeRentCost) {
         this.bankOfficeId = bankOfficeId;
         this.bankOfficeName = bankOfficeName;

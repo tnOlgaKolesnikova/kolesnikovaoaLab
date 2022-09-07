@@ -53,6 +53,19 @@ import java.util.Date;
      */
     private String loanRepayment;
 
+   /**
+    *
+    * @param creditAccountId Id кредитного счета
+    * @param creditAccountUser Пользователь, за которым закреплен этот кредитный счет
+    * @param creditAccountBankName Название банка, где взят кредит
+    * @param creditStartDate Дата начала кредита
+    * @param creditEndDate Дата окончания кредита
+    * @param creditCountMonths Кол-во месяцев, на которые взят кредит
+    * @param creditAmount Сумма кредита
+    * @param creditBankRate Поле Процентная ставка (должна быть равной процентной ставке банка, в котором взят кредит или ниже)
+    * @param creditIssuer Сотрудник, который выдал кредит
+    * @param loanRepayment латежный счет в банке с которого будет осуществляться погашение данного кредита
+    */
    public CreditAccount(int creditAccountId, User creditAccountUser, String creditAccountBankName, Date creditStartDate, Date creditEndDate, short creditCountMonths, float creditAmount, float creditBankRate, Employee creditIssuer, String loanRepayment) {
       this.creditAccountId = creditAccountId;
       this.creditAccountUser = creditAccountUser;

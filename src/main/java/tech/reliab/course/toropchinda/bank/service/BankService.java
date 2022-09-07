@@ -18,16 +18,23 @@ public interface BankService {
     Bank getBank(String name);
 
     /**
-     * Открыть банк с переданным именем
-     * @param name
+     * Открыть банк с переданным именем// create
+     * @param name имя банка, который нужно создать
      */
-    Bank openBank(String name);
+    Bank addBank(String name);
 
     /**
-     * Закрыть банк с указанным именем
-     * @param name
+     * Закрыть банк с указанным именем// delete
+     * @param name имя банка, который нужно удалить
      */
-    void closeBank(String name);
+    void deleteBank(String name);
+
+    /**Обновить информацию о банке
+     *
+     * @param banks
+     */
+    void updateBank(Bank banks);
+
 
     /**
      * Оповещает банк об открытии нового офиса(увеличивает счётчик офисов)
@@ -39,5 +46,19 @@ public interface BankService {
      * Оповещает банк о закрытии офиса(уменьшает счётчик офисов)
      * @param name
      */
-    void closeOfficeInBank(String name);
+    void deleteOfficeInBank(String name);
+
+    /**
+     * Оповещает банк об установке нового банкомата (увеличивает счетчик)
+     * @param name
+     */
+    void addBankAtm(String name);
+
+    /**
+     * Оповещает банк о демонтаже банкомата (уменьшает счетчик)
+     * @param name
+     */
+  void deleteAtmInBank(String name);
+
+
 }

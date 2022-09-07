@@ -5,7 +5,7 @@ import java.util.Random;
 public class RandomGenerator {
 
     /**
-     *
+     * Генератор случайных значений
      * @param min
      * @param max
      * @return

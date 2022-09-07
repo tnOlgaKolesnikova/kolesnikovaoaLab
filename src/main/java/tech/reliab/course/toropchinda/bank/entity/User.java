@@ -48,6 +48,14 @@ public class User {
      */
     private int userBanksCreditRating;
 
+    /**
+     *
+     * @param userId Id клиента
+     * @param userName ФИО
+     * @param userBirthdate Дата рождения
+     * @param userWorkplace Место работы
+     * @param userBank Банки, которыми клиент пользуется
+     */
     public User(int userId, String userName, Date userBirthdate, String userWorkplace, Bank userBank) {
         this.userId = userId;
         this.userName = userName;

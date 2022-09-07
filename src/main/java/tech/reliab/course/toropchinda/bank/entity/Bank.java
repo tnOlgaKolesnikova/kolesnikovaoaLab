@@ -59,7 +59,11 @@ public class Bank {
      */
     private float bankRate;
 
-
+    /**
+     * Конструктор создание нового объекта банк
+     * @param bankId Id банка
+     * @param bankName Имя банка
+     */
     public Bank(int bankId, String bankName) {
         this.bankId = bankId;
         this.bankName = bankName;
