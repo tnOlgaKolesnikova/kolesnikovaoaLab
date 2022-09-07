@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import tech.reliab.course.toropchinda.bank.utils.RandomGenerator;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -20,7 +20,7 @@ public class User {
     /**
      * Поле Дата рождения
      */
-    private Date userBirthdate;
+    private LocalDate userBirthdate;
     /**
      * Поле Место работы
      */
@@ -56,7 +56,7 @@ public class User {
      * @param userWorkplace Место работы
      * @param userBank Банки, которыми клиент пользуется
      */
-    public User(int userId, String userName, Date userBirthdate, String userWorkplace, Bank userBank) {
+    public User(int userId, String userName, LocalDate userBirthdate, String userWorkplace, Bank userBank) {
         this.userId = userId;
         this.userName = userName;
         this.userBirthdate = userBirthdate;

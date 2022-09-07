@@ -1,36 +1,38 @@
 package tech.reliab.course.toropchinda.bank.service;
 
+import tech.reliab.course.toropchinda.bank.entity.Bank;
 import tech.reliab.course.toropchinda.bank.entity.User;
+
+import java.time.LocalDate;
 
 public interface UserService {
 
- /**
-  *
-  * @param id Получение клиента банка по id
-  * @return объект клиента или null
-  */
- User getUser(int id);
+    /**
+     * создать клиента
+     * получить клиента по id
+     * получить клиента по имени
+     * обновить клиента
+     * удалить клиента по id
+     * удалить клиента по имени
+     */
 
- /**
-  *
-  * @param name Получение клиента банка по ФИО
-  * @return
-  */
- User getUser(String name);
+    void createUser(int userId,
+                    String userName,
+                    LocalDate userBirthdate,
+                    String userWorkplace,
+                    Bank userBank);
 
- /**
-  * Добавление нового клиента банка
-  * @param users
-  */
- void addUser(User users);
+    User getUser(int userId);
+    User getUser(String userName);
+    void updateUser(int userId,
+                    String userName,
+                    LocalDate    userBirthdate,
+                    String userWorkplace,
+                    Bank userBank);
+    void deleteUser(int userId);
+    void deleteUser(String userName);
 
- /**
-  * Удаление клиента банка
-  * @param users
-  */
- void deleteUser(User users);
 
-void updateUser(User users);
 
 
 }

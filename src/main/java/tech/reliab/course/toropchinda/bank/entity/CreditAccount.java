@@ -3,7 +3,7 @@ package tech.reliab.course.toropchinda.bank.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -23,11 +23,11 @@ import java.util.Date;
     /**
      * Поле Дата начала кредита
      */
-    private Date creditStartDate;
+    private LocalDate creditStartDate;
     /**
      * Поле Дата окончания кредита
      */
-    private Date creditEndDate;
+    private LocalDate creditEndDate;
     /**
      * Поле Кол-во месяцев, на которые взят кредит
      */
@@ -66,7 +66,7 @@ import java.util.Date;
     * @param creditIssuer Сотрудник, который выдал кредит
     * @param loanRepayment латежный счет в банке с которого будет осуществляться погашение данного кредита
     */
-   public CreditAccount(int creditAccountId, User creditAccountUser, String creditAccountBankName, Date creditStartDate, Date creditEndDate, short creditCountMonths, float creditAmount, float creditBankRate, Employee creditIssuer, String loanRepayment) {
+   public CreditAccount(int creditAccountId, User creditAccountUser, String creditAccountBankName, LocalDate creditStartDate, LocalDate creditEndDate, short creditCountMonths, float creditAmount, float creditBankRate, Employee creditIssuer, String loanRepayment) {
       this.creditAccountId = creditAccountId;
       this.creditAccountUser = creditAccountUser;
       this.creditAccountBankName = creditAccountBankName;

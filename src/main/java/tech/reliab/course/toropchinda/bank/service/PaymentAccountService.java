@@ -1,6 +1,7 @@
 package tech.reliab.course.toropchinda.bank.service;
 
 import tech.reliab.course.toropchinda.bank.entity.PaymentAccount;
+import tech.reliab.course.toropchinda.bank.entity.User;
 
 public interface PaymentAccountService {
     /**
@@ -14,7 +15,7 @@ public interface PaymentAccountService {
      * @param id
      * @return
      */
-    PaymentAccount addPaymentAccount(int id);
+    PaymentAccount addPaymentAccount(int id, User user, String bankName);
 
     /**
      * Обновить платежный счет
@@ -29,9 +30,6 @@ public interface PaymentAccountService {
     void deletePaymentAccount(int id);
 
 
-    /**
-     * Получить все платежные счета клиента??
-     */
 
 
 }

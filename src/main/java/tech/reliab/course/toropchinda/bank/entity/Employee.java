@@ -3,7 +3,7 @@ package tech.reliab.course.toropchinda.bank.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -20,7 +20,7 @@ public class Employee {
     /**
      * Поле Дата рождения
      */
-    private Date employeeBirthdate;
+    private LocalDate employeeBirthdate;
     /**
      * Поле Должность
      */
@@ -46,7 +46,7 @@ public class Employee {
      * Конструктор создание нового объекта сотрудник банка
      */
 
-    public Employee(int employeeId, String employeeName, Date employeeBirthdate, String employeePosition, boolean isWorkRemote, BankOffice employeeBankOffice, boolean isCreditIssuer, int employeeSalary) {
+    public Employee(int employeeId, String employeeName, LocalDate employeeBirthdate, String employeePosition, boolean isWorkRemote, BankOffice employeeBankOffice, boolean isCreditIssuer, int employeeSalary) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirthdate = employeeBirthdate;

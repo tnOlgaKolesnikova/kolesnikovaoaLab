@@ -27,10 +27,10 @@ public class PaymentAccount {
     /**
      *
      */
-    public PaymentAccount() {
-        this.paymentAccountId = paymentAccountId;
-        this.paymentUser = paymentUser;
-        this.paymentAccountBankName = paymentAccountBankName;
+    public PaymentAccount(int id, User user, String bankName) {
+        this.paymentAccountId = id;
+        this.paymentUser = user;
+        this.paymentAccountBankName = bankName;
         this.paymentAccountAmount = 0;
     }
 }

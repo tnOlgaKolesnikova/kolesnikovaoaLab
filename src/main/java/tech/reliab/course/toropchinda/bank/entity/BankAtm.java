@@ -13,7 +13,7 @@ public class BankAtm {
     /**
      * Поле Имя банкомата
      */
-    private int bankAtmName;
+    private String bankAtmName;
     /**
      * Поле Адрес (сопадает с адресом банковского офиса)
      */
@@ -61,10 +61,10 @@ public class BankAtm {
      * @param bankAtmEmployee Обслуживающий сотрудник
      * @param isGiveMoney Работает ли банкомат на выдачу денег
      * @param isTakeMoney Можно ли внести деньги в банкомат
-     * @param bankAtmMoneyCount Стоимость обслуживания банкомата
+     * @param bankAtmMoneyCount Кол-во денег в банкомате
      * @param bankAtmServiceCost Стоимость обслуживания банкомата
      */
-    public BankAtm(int bankAtmId, int bankAtmName, BankAtmStatus bankAtmStatus, Bank bankAtmAcquiring, BankOffice bankAtmLocation, Employee bankAtmEmployee, boolean isGiveMoney, boolean isTakeMoney, int bankAtmMoneyCount, int bankAtmServiceCost) {
+    public BankAtm(int bankAtmId, String bankAtmName, BankAtmStatus bankAtmStatus, Bank bankAtmAcquiring, BankOffice bankAtmLocation, Employee bankAtmEmployee, boolean isGiveMoney, boolean isTakeMoney, int bankAtmMoneyCount, int bankAtmServiceCost) {
         this.bankAtmId = bankAtmId;
         this.bankAtmName = bankAtmName;
         this.bankAtmAddress = bankAtmLocation.getBankOfficeAddress();

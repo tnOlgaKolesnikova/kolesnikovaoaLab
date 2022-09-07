@@ -7,8 +7,8 @@ public class BankServiceImpl implements BankService {
 
     private Bank banks;
 
-    BankServiceImpl(){
-        this.banks = new Bank(1, "");
+    public BankServiceImpl(){
+        this.banks = null;
     }
 
     @Override
