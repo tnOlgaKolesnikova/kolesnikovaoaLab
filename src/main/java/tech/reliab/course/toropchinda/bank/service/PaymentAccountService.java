@@ -5,17 +5,23 @@ import tech.reliab.course.toropchinda.bank.entity.User;
 
 public interface PaymentAccountService {
     /**
-     *Получить платежный счет
-      * @return объект платежный счет или null
-     */
-    PaymentAccount getPaymentAccount(int id);
-
-    /**
      * Добавить новый платежный счет
      * @param id
      * @return
      */
-    PaymentAccount addPaymentAccount(int id, User user, String bankName);
+    PaymentAccount createPaymentAccount(int id, User user, String bankName);
+
+    /**
+     * Добавить в коллекцию сервиса счёт, уже где-то созданный
+     * @param acc
+     */
+    void addPaymentAccount(PaymentAccount acc);
+
+    /**
+     *Получить платежный счет
+      * @return объект платежный счет или null
+     */
+    PaymentAccount getPaymentAccount(int id);
 
     /**
      * Обновить платежный счет

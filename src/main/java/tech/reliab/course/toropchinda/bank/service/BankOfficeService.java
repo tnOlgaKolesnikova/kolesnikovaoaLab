@@ -1,18 +1,24 @@
 package tech.reliab.course.toropchinda.bank.service;
 
-import tech.reliab.course.toropchinda.bank.entity.Bank;
 import tech.reliab.course.toropchinda.bank.entity.BankOffice;
 import tech.reliab.course.toropchinda.bank.entity.BankOfficeStatus;
 
 public interface BankOfficeService {
     /**
-     * создать новый офис
-     * получить офис по id
-     * получить офис по имени
-     * изменить офис по id
-     * удалить офис по имени
+     * Cоздание нового офиса банка с помещением его в коллекцию в сервисе
+     * @param bankOfficeId
+     * @param bankOfficeName
+     * @param bankOfficeAddress
+     * @param bankOfficeStatus
+     * @param isPossibleBankAtmPlaced
+     * @param bankOfficeCountBankAtm
+     * @param isPossibleCredit
+     * @param isPossibleCashGet
+     * @param isPossibleCashIn
+     * @param bankOfficeMoneyCount
+     * @param bankOfficeRentCost
+     * @return
      */
-
     BankOffice createBankOffice(int bankOfficeId,
                           String bankOfficeName,
                           String bankOfficeAddress,
@@ -25,24 +31,42 @@ public interface BankOfficeService {
                           int bankOfficeMoneyCount,
                           int bankOfficeRentCost);
 
+    /**
+     * Добавление в коллекцию в сервисе офиса банка, который уже был где-то создан
+     * @param office
+     */
+   void addBankOffice(BankOffice office);
+
+    /**
+     * Получение офиса банка по id
+     * @param id
+     * @return
+     */
     BankOffice getBankOffice(int id);
 
+    /**
+     * Получение офиса банка по имени
+     * @param name
+     * @return
+     */
     BankOffice getBankOffice(String name);
 
-    void updateBankOffice(int bankOfficeId,
-                          String bankOfficeName,
-                          String bankOfficeAddress,
-                          BankOfficeStatus bankOfficeStatus,
-                          boolean isPossibleBankAtmPlaced,
-                          int bankOfficeCountBankAtm,
-                          boolean isPossibleCredit,
-                          boolean isPossibleCashGet,
-                          boolean isPossibleCashIn,
-                          int bankOfficeMoneyCount,
-                          int bankOfficeRentCost);
+    /**
+     * Перезапись офиса банка новым, с изменёнными полями
+     * @param bankOffice
+     */
+    void updateBankOffice(BankOffice bankOffice);
 
+    /**
+     * Удаление банкомата из коллекции в сервисе по id
+     * @param id
+     */
     void deleteBankOffice(int id);
 
+    /**
+     * Удаление банкомата из коллекции в сервисе по имени
+     * @param name
+     */
     void deleteBankOffice(String name);
 
 }

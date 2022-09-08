@@ -11,6 +11,36 @@ public class AtmServiceImpl implements AtmService {
     }
 
     @Override
+    public BankAtm createBankAtm(int bankAtmId,
+                                 String bankAtmName,
+                                 BankAtmStatus bankAtmStatus,
+                                 Bank bankAtmAcquiring,
+                                 BankOffice bankAtmLocation,
+                                 Employee bankAtmEmployee,
+                                 boolean isGiveMoney,
+                                 boolean isTakeMoney,
+                                 int bankAtmMoneyCount,
+                                 int bankAtmServiceCost) {
+        this.bankAtms = new BankAtm(
+                bankAtmId,
+                bankAtmName,
+                bankAtmStatus,
+                bankAtmAcquiring,
+                bankAtmLocation,
+                bankAtmEmployee,
+                isGiveMoney,
+                isTakeMoney,
+                bankAtmMoneyCount,
+                bankAtmServiceCost);
+        return this.bankAtms;
+    }
+
+    @Override
+    public void addBankAtm(BankAtm atm){
+        this.bankAtms = atm;
+    }
+
+    @Override
     public BankAtm getBankAtm(int id) {
         if (this.bankAtms.getBankAtmId() == id) {
             return this.bankAtms;
@@ -27,27 +57,10 @@ public class AtmServiceImpl implements AtmService {
     }
 
     @Override
-    public void createBankAtm(int bankAtmId,
-                              String bankAtmName,
-                              BankAtmStatus bankAtmStatus,
-                              Bank bankAtmAcquiring,
-                              BankOffice bankAtmLocation,
-                              Employee bankAtmEmployee,
-                              boolean isGiveMoney,
-                              boolean isTakeMoney,
-                              int bankAtmMoneyCount,
-                              int bankAtmServiceCost) {
-        this.bankAtms = new BankAtm(
-                bankAtmId,
-                bankAtmName,
-                bankAtmStatus,
-                bankAtmAcquiring,
-                bankAtmLocation,
-                bankAtmEmployee,
-                isGiveMoney,
-                isTakeMoney,
-                bankAtmMoneyCount,
-                bankAtmServiceCost);
+    public void updateBankAtm(BankAtm atm){
+        if(this.bankAtms.getBankAtmId() == atm.getBankAtmId()){
+            this.bankAtms = atm;
+        }
     }
 
     @Override
@@ -55,26 +68,5 @@ public class AtmServiceImpl implements AtmService {
         if (this.bankAtms.getBankAtmId() == bankAtmId) {
             this.bankAtms = null;
         }
-    }
-
-    @Override
-    public void deleteBankAtm(String bankAtmName) {
-        if (this.bankAtms.getBankAtmName().equals(bankAtmName)) {
-            this.bankAtms = null;
-        }
-    }
-
-    @Override
-    public void updateBankAtm(int bankAtmId, String bankAtmName, BankAtmStatus bankAtmStatus, Bank bankAtmAcquiring, BankOffice bankAtmLocation, Employee bankAtmEmployee, boolean isGiveMoney, boolean isTakeMoney, int bankAtmMoneyCount, int bankAtmServiceCost) {
-        this.bankAtms.setBankAtmId(bankAtmId);
-        this.bankAtms.setBankAtmName(bankAtmName);
-        this.bankAtms.setBankAtmStatus(bankAtmStatus);
-        this.bankAtms.setBankAtmAcquiring(bankAtmAcquiring);
-        this.bankAtms.setBankAtmLocation(bankAtmLocation);
-        this.bankAtms.setBankAtmEmployee(bankAtmEmployee);
-        this.bankAtms.setGiveMoney(isGiveMoney);
-        this.bankAtms.setTakeMoney(isTakeMoney);
-        this.bankAtms.setBankAtmMoneyCount(bankAtmMoneyCount);
-        this.bankAtms.setBankAtmServiceCost(bankAtmServiceCost);
     }
 }

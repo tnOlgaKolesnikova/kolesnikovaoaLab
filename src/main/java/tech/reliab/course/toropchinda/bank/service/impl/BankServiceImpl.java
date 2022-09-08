@@ -7,13 +7,24 @@ public class BankServiceImpl implements BankService {
 
     private Bank banks;
 
-    public BankServiceImpl(){
+    public BankServiceImpl() {
         this.banks = null;
     }
 
     @Override
+    public Bank createBank(String name) {
+        this.banks = new Bank(1, name);
+        return this.banks;
+    }
+
+    @Override
+    public void addBank(Bank bank) {
+        this.banks = bank;
+    }
+
+    @Override
     public Bank getBank(int id) {
-        if (this.banks.getBankId() == id){
+        if (this.banks.getBankId() == id) {
             return this.banks;
         } else {
             return null;
@@ -22,7 +33,7 @@ public class BankServiceImpl implements BankService {
 
     @Override
     public Bank getBank(String name) {
-        if (this.banks.getBankName().equals(name)){
+        if (this.banks.getBankName().equals(name)) {
             return this.banks;
         } else {
             return null;
@@ -30,49 +41,14 @@ public class BankServiceImpl implements BankService {
     }
 
     @Override
-    public Bank addBank(String name) {
-        this.banks = new Bank(1, name);
-        return this.banks;
+    public void updateBank(Bank bank) {
+        if (this.banks.getBankId() == bank.getBankId()) {
+            this.banks = bank;
+        }
     }
 
     @Override
     public void deleteBank(String name) {
         this.banks = null;
     }
-    @Override
-    public void updateBank(Bank banks)
-    {
-
-    }
-
-    @Override
-    public void addOfficeInBank(String name) {
-        if(this.banks.getBankName().equals(name)){
-            this.banks.setBankOfficeCount(this.banks.getBankOfficeCount()+1);
-        }
-    }
-
-    @Override
-    public void deleteOfficeInBank(String name) {
-        if(this.banks.getBankName().equals(name) && this.banks.getBankOfficeCount() >= 1){
-            this.banks.setBankOfficeCount(this.banks.getBankOfficeCount()-1);
-        }
-    }
-    @Override
-    public void addBankAtm(String name) {
-        if(this.banks.getBankName().equals(name)){
-            this.banks.setBankAtmCount(this.banks.getBankAtmCount()+1);
-        }
-    }
-    @Override
-    public void deleteAtmInBank(String name) {
-        if(this.banks.getBankName().equals(name) && this.banks.getBankAtmCount() >= 1){
-            this.banks.setBankAtmCount(this.banks.getBankAtmCount()-1);
-        }
-
-
-
-}
-
-
 }

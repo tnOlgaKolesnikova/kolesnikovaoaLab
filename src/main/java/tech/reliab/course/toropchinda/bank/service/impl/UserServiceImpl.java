@@ -10,10 +10,11 @@ public class UserServiceImpl implements UserService {
 
     private User users;
     public UserServiceImpl(){
-        this.users = null;}
+        this.users = null;
+    }
 
     @Override
-    public void createUser(int userId,
+    public User createUser(int userId,
                            String userName,
                            LocalDate userBirthdate,
                            String userWorkplace,
@@ -24,7 +25,12 @@ public class UserServiceImpl implements UserService {
                 userBirthdate,
                 userWorkplace,
                 userBank);
+        return this.users;
+    }
 
+    @Override
+    public void addUser(User user) {
+        this.users = user;
     }
 
     @Override
@@ -44,16 +50,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void updateUser(int userId,
-                           String userName,
-                           LocalDate userBirthdate,
-                           String userWorkplace,
-                           Bank userBank) {
-        this.users.setUserId(userId);
-        this.users.setUserName(userName);
-        this.users.setUserBirthdate(userBirthdate);
-        this.users.setUserWorkplace(userWorkplace);
-        this.users.setUserBank(userBank);
+    public void updateUser(User user) {
+        if(this.users.getUserId() == user.getUserId()){
+            this.users = user;
+        }
     }
 
     @Override

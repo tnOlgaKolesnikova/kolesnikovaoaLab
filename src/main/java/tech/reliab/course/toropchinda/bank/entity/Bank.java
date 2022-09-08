@@ -1,11 +1,9 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import tech.reliab.course.toropchinda.bank.utils.RandomGenerator;
 
-@Setter
-@Getter
+@Data
 public class Bank {
     /**
      * Поле Id банка
@@ -57,11 +55,12 @@ public class Bank {
      * нужно учитывать рейтинг банка, чем он выше, тем ставка должна
      * сгенерироваться меньше)
      */
-    private float bankRate;
+    private int bankRate;
 
     /**
      * Конструктор создание нового объекта банк
-     * @param bankId Id банка
+     *
+     * @param bankId   Id банка
      * @param bankName Имя банка
      */
     public Bank(int bankId, String bankName) {
@@ -76,6 +75,13 @@ public class Bank {
         this.bankRate = RandomGenerator.generateRateUseRating(1, 20, this.bankRating);
     }
 
-
+    @Override
+    public String toString() {
+        return "Банк " + this.bankName + " содержит:\n" +
+                this.bankOfficeCount + " офис(ов), " + this.bankAtmCount + " банкомат(ов) " +
+                this.bankEmployeeCount + " сотрудников. И обслуживает " + this.bankUserCount + " клиентов.\n" +
+                "Рейтинг банка: " + this.bankRating + " при ставке в " + this.bankRate + "%.\n" +
+                "Суммарно на счетах и в банкоматах " + this.bankMoneyCount + " рублей 0 копеек\n";
+    }
 }
 

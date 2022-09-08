@@ -1,7 +1,4 @@
 package tech.reliab.course.toropchinda.bank.service.impl;
-
-import tech.reliab.course.toropchinda.bank.entity.Bank;
-import tech.reliab.course.toropchinda.bank.entity.BankAtm;
 import tech.reliab.course.toropchinda.bank.entity.BankOffice;
 import tech.reliab.course.toropchinda.bank.entity.BankOfficeStatus;
 import tech.reliab.course.toropchinda.bank.service.BankOfficeService;
@@ -30,6 +27,11 @@ public class BankOfficeServiceImpl implements BankOfficeService {
     }
 
     @Override
+    public void addBankOffice(BankOffice office) {
+        this.bankOffices = office;
+    }
+
+    @Override
     public BankOffice getBankOffice(int id) {
         if (this.bankOffices.getBankOfficeId() == id) {
             return this.bankOffices;
@@ -46,28 +48,10 @@ public class BankOfficeServiceImpl implements BankOfficeService {
     }
 
     @Override
-    public void updateBankOffice(int bankOfficeId,
-                                 String bankOfficeName,
-                                 String bankOfficeAddress,
-                                 BankOfficeStatus bankOfficeStatus,
-                                 boolean isPossibleBankAtmPlaced,
-                                 int bankOfficeCountBankAtm,
-                                 boolean isPossibleCredit,
-                                 boolean isPossibleCashGet,
-                                 boolean isPossibleCashIn,
-                                 int bankOfficeMoneyCount,
-                                 int bankOfficeRentCost) {
-        this.bankOffices.setBankOfficeId(bankOfficeId);
-        this.bankOffices.setBankOfficeName(bankOfficeName);
-        this.bankOffices.setBankOfficeAddress(bankOfficeAddress);
-        this.bankOffices.setBankOfficeStatus(bankOfficeStatus);
-        this.bankOffices.setPossibleBankAtmPlaced(isPossibleBankAtmPlaced);
-        this.bankOffices.setBankOfficeCountBankAtm(bankOfficeCountBankAtm);
-        this.bankOffices.setPossibleCredit(isPossibleCredit);
-        this.bankOffices.setPossibleCashGet(isPossibleCashGet);
-        this.bankOffices.setPossibleCashIn(isPossibleCashIn);
-        this.bankOffices.setBankOfficeMoneyCount(bankOfficeMoneyCount);
-        this.bankOffices.setBankOfficeRentCost(bankOfficeRentCost);
+    public void updateBankOffice(BankOffice bankOffice) {
+        if(this.bankOffices.getBankOfficeId() == bankOffice.getBankOfficeId()){
+            this.bankOffices = bankOffice;
+        }
     }
 
     @Override

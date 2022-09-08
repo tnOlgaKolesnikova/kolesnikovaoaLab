@@ -3,41 +3,64 @@ package tech.reliab.course.toropchinda.bank.service;
 import tech.reliab.course.toropchinda.bank.entity.*;
 
 public interface AtmService {
+
     /**
-     * получить банкомат по id
-     * получить банкомат по имени
-     * создать банкомат
-     * удалить банкомат
-     * обновить банкомат
+     * Создание нового банкомата с помещением его в коллекцию в сервисе
+     * @param bankAtmId id банкомата
+     * @param bankAtmName имя банкомата
+     * @param bankAtmStatus статус банкомата
+     * @param bankAtmAcquiring принимает ли
+     * @param bankAtmLocation Расположение банкомата
+     * @param bankAtmEmployee обслуживающий сотрудник
+     * @param isGiveMoney Работает ли на выдачу денег
+     * @param isTakeMoney Можно ли внести деньги
+     * @param bankAtmMoneyCount Кол-во денег в банкомате
+     * @param bankAtmServiceCost Стоимость обслуживания банкомата
+     * @return
+     */
+    BankAtm createBankAtm(
+            int bankAtmId,
+            String bankAtmName,
+            BankAtmStatus bankAtmStatus,
+            Bank bankAtmAcquiring,
+            BankOffice bankAtmLocation,
+            Employee bankAtmEmployee,
+            boolean isGiveMoney,
+            boolean isTakeMoney,
+            int bankAtmMoneyCount,
+            int bankAtmServiceCost
+    );
+
+    /**
+     * Добавление в коллекцию в сервисе банкомата, который уже был где-то создан
+     * @param atm
+     */
+    void addBankAtm(BankAtm atm);
+
+    /**
+     * Получение банкомата по id
+     * @param id
+     * @return
      */
     BankAtm getBankAtm(int id);
 
+    /**
+     * Получение банкомата по имени
+     * @param name
+     * @return
+     */
     BankAtm getBankAtm(String name);
 
-    void createBankAtm(int bankAtmId,
-                       String bankAtmName,
-                       BankAtmStatus bankAtmStatus,
-                       Bank bankAtmAcquiring,
-                       BankOffice bankAtmLocation,
-                       Employee bankAtmEmployee,
-                       boolean isGiveMoney,
-                       boolean isTakeMoney,
-                       int bankAtmMoneyCount,
-                       int bankAtmServiceCost);
+    /**
+     * Перезапись банкомата новым, с изменёнными полями
+     * @param atm
+     */
+    void updateBankAtm(BankAtm atm);
 
+    /**
+     * Удаление банкомата из коллекции в сервисе по id
+     * @param bankAtmId
+     */
     void deleteBankAtm(int bankAtmId);
-
-    void deleteBankAtm(String bankAtmName);
-
-    void updateBankAtm(int bankAtmId,
-                       String bankAtmName,
-                       BankAtmStatus bankAtmStatus,
-                       Bank bankAtmAcquiring,
-                       BankOffice bankAtmLocation,
-                       Employee bankAtmEmployee,
-                       boolean isGiveMoney,
-                       boolean isTakeMoney,
-                       int bankAtmMoneyCount,
-                       int bankAtmServiceCost);
 
 }

@@ -1,13 +1,12 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
-@Getter
-@Setter
- class CreditAccount {
+@Data
+public class CreditAccount {
     /**
      * Поле Id кредитного счета
      */
@@ -35,15 +34,15 @@ import java.time.LocalDate;
     /**
      * Поле Сумма кредита
      */
-    private float creditAmount;
+    private int creditAmount;
     /**
      * Поле Ежемесячный платеж
      */
-    private float creditMonthlyPayment;
+    private int creditMonthlyPayment;
     /**
      * Поле Процентная ставка (должна быть равной процентной ставке банка, в котором взят кредит или ниже)
      */
-    private float creditBankRate;
+    private int creditBankRate;
     /**
      * Сотрудник, который выдал кредит
      */
@@ -60,21 +59,28 @@ import java.time.LocalDate;
     * @param creditAccountBankName Название банка, где взят кредит
     * @param creditStartDate Дата начала кредита
     * @param creditEndDate Дата окончания кредита
-    * @param creditCountMonths Кол-во месяцев, на которые взят кредит
     * @param creditAmount Сумма кредита
     * @param creditBankRate Поле Процентная ставка (должна быть равной процентной ставке банка, в котором взят кредит или ниже)
     * @param creditIssuer Сотрудник, который выдал кредит
     * @param loanRepayment латежный счет в банке с которого будет осуществляться погашение данного кредита
     */
-   public CreditAccount(int creditAccountId, User creditAccountUser, String creditAccountBankName, LocalDate creditStartDate, LocalDate creditEndDate, short creditCountMonths, float creditAmount, float creditBankRate, Employee creditIssuer, String loanRepayment) {
+   public CreditAccount(int creditAccountId,
+                        User creditAccountUser,
+                        String creditAccountBankName,
+                        LocalDate creditStartDate,
+                        LocalDate creditEndDate,
+                        int creditAmount,
+                        int creditBankRate,
+                        Employee creditIssuer,
+                        String loanRepayment) {
       this.creditAccountId = creditAccountId;
       this.creditAccountUser = creditAccountUser;
       this.creditAccountBankName = creditAccountBankName;
       this.creditStartDate = creditStartDate;
       this.creditEndDate = creditEndDate;
-      this.creditCountMonths = creditCountMonths;
+      this.creditCountMonths = (short) ChronoUnit.MONTHS.between(creditStartDate, creditEndDate);
       this.creditAmount = creditAmount;
-      this.creditMonthlyPayment = creditAmount/creditCountMonths;
+      this.creditMonthlyPayment = (int) Math.ceil(creditAmount/creditCountMonths);
       this.creditBankRate = creditBankRate;
       this.creditIssuer = creditIssuer;
       this.loanRepayment = loanRepayment;

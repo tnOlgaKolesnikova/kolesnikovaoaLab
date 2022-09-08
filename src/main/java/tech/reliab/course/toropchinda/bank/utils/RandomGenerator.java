@@ -6,6 +6,7 @@ public class RandomGenerator {
 
     /**
      * Генератор случайных значений
+     *
      * @param min
      * @param max
      * @return
@@ -15,27 +16,21 @@ public class RandomGenerator {
     }
 
     /**
-     *
-     * @param min
-     * @param max
-     * @return
-     */
-    public static float generateFloat(float min, float max) {
-        return new Random().nextFloat(max - min + 1) + min;
-    }
-
-    /**
      * Генерация процентной ставки на основе рейтинга банка
-     * @param rating Рейтинг от 1 до 100
+     *
+     * @param rating Рейтинг от 0 до 100
      * @return
      */
-    public static float generateRateUseRating(int min, int max, int rating) {
-        float random = generateFloat(min, max);
-        return (float) (random * (1 - rating*0.5));
+    public static int generateRateUseRating(int min, int max, int rating) {
+        int length = max-min;
+        int exactRateByRating = (int) Math.ceil(rating / (100 / length));
+        int inverseRateByRating = Math.abs(exactRateByRating-max);
+        return generateInt(inverseRateByRating, inverseRateByRating);
     }
 
     /**
      * Генератор кредитного рейтинга без рандома на основе месячного дохода
+     *
      * @param mountIncome месячный доход от 1 до 10000
      * @return
      */

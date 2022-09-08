@@ -1,10 +1,8 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class PaymentAccount {
 
     /**
@@ -24,9 +22,6 @@ public class PaymentAccount {
      */
     private int paymentAccountAmount;
 
-    /**
-     *
-     */
     public PaymentAccount(int id, User user, String bankName) {
         this.paymentAccountId = id;
         this.paymentUser = user;

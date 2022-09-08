@@ -1,6 +1,4 @@
 package tech.reliab.course.toropchinda.bank.service.impl;
-
-import tech.reliab.course.toropchinda.bank.entity.BankAtm;
 import tech.reliab.course.toropchinda.bank.entity.BankOffice;
 import tech.reliab.course.toropchinda.bank.entity.Employee;
 import tech.reliab.course.toropchinda.bank.service.EmployeeService;
@@ -13,15 +11,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     public EmployeeServiceImpl(){
         this.employees = null;
     }
+
     @Override
     public Employee createEmployee(int employeeId,
-                               String employeeName,
-                               LocalDate employeeBirthdate,
-                               String employeePosition,
-                               boolean isWorkRemote,
-                               BankOffice employeeBankOffice,
-                               boolean isCreditIssuer,
-                               int employeeSalary) {
+                                   String employeeName,
+                                   LocalDate employeeBirthdate,
+                                   String employeePosition,
+                                   boolean isWorkRemote,
+                                   BankOffice employeeBankOffice,
+                                   boolean isCreditIssuer,
+                                   int employeeSalary) {
         this.employees = new Employee(
                 employeeId,
                 employeeName,
@@ -32,6 +31,11 @@ public class EmployeeServiceImpl implements EmployeeService {
                 isCreditIssuer,
                 employeeSalary);
         return this.employees;
+    }
+
+    @Override
+    public void addEmployee(Employee employee) {
+     this.employees = employee;
     }
 
     @Override
@@ -51,24 +55,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void updateEmployee(int employeeId,
-                               String employeeName,
-                               LocalDate employeeBirthdate,
-                               String employeePosition,
-                               boolean isWorkRemote,
-                               BankOffice employeeBankOffice,
-                               boolean isCreditIssuer,
-                               int employeeSalary) {
-        this.employees.setEmployeeId(employeeId);
-        this.employees.setEmployeeName(employeeName);
-        this.employees.setEmployeeBirthdate(employeeBirthdate);
-        this.employees.setEmployeePosition(employeePosition);
-        this.employees.setWorkRemote(isWorkRemote);
-        this.employees.setEmployeeBankOffice(employeeBankOffice);
-        this.employees.setCreditIssuer(isCreditIssuer);
-        this.employees.setEmployeeSalary(employeeSalary);
-
-
+    public void updateEmployee(Employee employee) {
+        if(this.employees.getEmployeeId() == employee.getEmployeeId()){
+            this.employees = employee;
+        }
     }
 
     @Override

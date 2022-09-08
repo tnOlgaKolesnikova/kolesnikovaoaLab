@@ -1,10 +1,9 @@
 package tech.reliab.course.toropchinda.bank.entity;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+import lombok.Data;
+
+@Data
 public class BankOffice {
     /**
      * Поле Id банковского офиса
