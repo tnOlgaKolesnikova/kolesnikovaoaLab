@@ -10,15 +10,15 @@ public interface CreditAccountService {
 
     /**
      *Создание нового кредитного счета с помещением его в коллекцию в сервисе
-     * @param id
-     * @param user
-     * @param bankName
-     * @param startDate
-     * @param endDate
-     * @param creditAmount
-     * @param creditBankRate
-     * @param creditIssuer
-     * @param loanRepayment
+     * @param id id кредитного счета
+     * @param user клиент, зак оторым закреплен счет
+     * @param bankName банк, в котором открыт счет
+     * @param startDate Дата начала кредита
+     * @param endDate Дата окончания кредита
+     * @param creditAmount Сумма кредита
+     * @param creditBankRate Процентная ставка
+     * @param creditIssuer Сотрудник, который выдал кредит
+     * @param loanRepayment Платежный счет в банке с которого будет осуществляться погашение данного кредита
      * @return
      */
     CreditAccount createCreditAccount(int id,

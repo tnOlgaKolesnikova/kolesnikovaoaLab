@@ -44,7 +44,14 @@ public class Employee {
      * Конструктор создание нового объекта сотрудник банка
      */
 
-    public Employee(int employeeId, String employeeName, LocalDate employeeBirthdate, String employeePosition, boolean isWorkRemote, BankOffice employeeBankOffice, boolean isCreditIssuer, int employeeSalary) {
+    public Employee(int employeeId,
+                    String employeeName,
+                    LocalDate employeeBirthdate,
+                    String employeePosition,
+                    boolean isWorkRemote,
+                    BankOffice employeeBankOffice,
+                    boolean isCreditIssuer,
+                    int employeeSalary) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirthdate = employeeBirthdate;

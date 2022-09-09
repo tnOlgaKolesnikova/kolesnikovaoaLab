@@ -39,15 +39,15 @@ public interface AtmService {
 
     /**
      * Получение банкомата по id
-     * @param id
-     * @return
+     * @param id id банкомата
+     * @return банкомат или null
      */
     BankAtm getBankAtm(int id);
 
     /**
      * Получение банкомата по имени
-     * @param name
-     * @return
+     * @param name имя банкомата
+     * @return банкомат или null
      */
     BankAtm getBankAtm(String name);
 

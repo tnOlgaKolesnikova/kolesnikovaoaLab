@@ -22,6 +22,13 @@ public class PaymentAccount {
      */
     private int paymentAccountAmount;
 
+    /**
+     * Конструктор создание нового объекта платежный счет
+     * @param id Id платёжного счета
+     * @param user Пользователь, за которым закреплен этот платежный счет
+     * @param bankName Название банка, в котором открыт этот счет
+     */
+
     public PaymentAccount(int id, User user, String bankName) {
         this.paymentAccountId = id;
         this.paymentUser = user;
