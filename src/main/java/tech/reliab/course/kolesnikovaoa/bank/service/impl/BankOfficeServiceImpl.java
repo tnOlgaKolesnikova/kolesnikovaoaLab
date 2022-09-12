@@ -1,7 +1,7 @@
-package tech.reliab.course.toropchinda.bank.service.impl;
-import tech.reliab.course.toropchinda.bank.entity.BankOffice;
-import tech.reliab.course.toropchinda.bank.entity.BankOfficeStatus;
-import tech.reliab.course.toropchinda.bank.service.BankOfficeService;
+package tech.reliab.course.kolesnikovaoa.bank.service.impl;
+import tech.reliab.course.kolesnikovaoa.bank.entity.BankOffice;
+import tech.reliab.course.kolesnikovaoa.bank.entity.BankOfficeStatus;
+import tech.reliab.course.kolesnikovaoa.bank.service.BankOfficeService;
 
 public class BankOfficeServiceImpl implements BankOfficeService {
     private BankOffice bankOffices;

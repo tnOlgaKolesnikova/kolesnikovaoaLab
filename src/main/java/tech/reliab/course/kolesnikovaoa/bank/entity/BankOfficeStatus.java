@@ -1,4 +1,4 @@
-package tech.reliab.course.toropchinda.bank.entity;
+package tech.reliab.course.kolesnikovaoa.bank.entity;
 
 public enum BankOfficeStatus {
     WORK,

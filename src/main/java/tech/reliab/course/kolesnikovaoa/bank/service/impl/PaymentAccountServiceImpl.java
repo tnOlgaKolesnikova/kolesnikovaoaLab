@@ -1,8 +1,8 @@
-package tech.reliab.course.toropchinda.bank.service.impl;
+package tech.reliab.course.kolesnikovaoa.bank.service.impl;
 
-import tech.reliab.course.toropchinda.bank.entity.PaymentAccount;
-import tech.reliab.course.toropchinda.bank.entity.User;
-import tech.reliab.course.toropchinda.bank.service.PaymentAccountService;
+import tech.reliab.course.kolesnikovaoa.bank.entity.PaymentAccount;
+import tech.reliab.course.kolesnikovaoa.bank.entity.User;
+import tech.reliab.course.kolesnikovaoa.bank.service.PaymentAccountService;
 
 public class PaymentAccountServiceImpl implements PaymentAccountService {
     private PaymentAccount paymentAccounts;

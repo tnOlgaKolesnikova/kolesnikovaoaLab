@@ -1,8 +1,8 @@
-package tech.reliab.course.toropchinda.bank;
+package tech.reliab.course.kolesnikovaoa.bank;
 
-import tech.reliab.course.toropchinda.bank.entity.*;
+import tech.reliab.course.kolesnikovaoa.bank.entity.*;
 
-import tech.reliab.course.toropchinda.bank.service.impl.*;
+import tech.reliab.course.kolesnikovaoa.bank.service.impl.*;
 
 import java.time.LocalDate;
 

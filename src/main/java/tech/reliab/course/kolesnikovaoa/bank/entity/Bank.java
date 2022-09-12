@@ -1,7 +1,7 @@
-package tech.reliab.course.toropchinda.bank.entity;
+package tech.reliab.course.kolesnikovaoa.bank.entity;
 
 import lombok.Data;
-import tech.reliab.course.toropchinda.bank.utils.RandomGenerator;
+import tech.reliab.course.kolesnikovaoa.bank.utils.RandomGenerator;
 
 @Data
 public class Bank {

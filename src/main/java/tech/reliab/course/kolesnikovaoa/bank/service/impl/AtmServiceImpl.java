@@ -1,7 +1,7 @@
-package tech.reliab.course.toropchinda.bank.service.impl;
+package tech.reliab.course.kolesnikovaoa.bank.service.impl;
 
-import tech.reliab.course.toropchinda.bank.entity.*;
-import tech.reliab.course.toropchinda.bank.service.AtmService;
+import tech.reliab.course.kolesnikovaoa.bank.entity.*;
+import tech.reliab.course.kolesnikovaoa.bank.service.AtmService;
 
 public class AtmServiceImpl implements AtmService {
     private BankAtm bankAtms;

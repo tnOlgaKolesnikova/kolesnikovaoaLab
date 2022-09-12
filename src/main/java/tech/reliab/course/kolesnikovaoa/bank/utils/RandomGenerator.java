@@ -1,4 +1,4 @@
-package tech.reliab.course.toropchinda.bank.utils;
+package tech.reliab.course.kolesnikovaoa.bank.utils;
 
 import java.util.Random;
 
